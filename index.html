@@ -81,6 +81,29 @@
         letter-spacing: 0.18em;
       }
 
+      .conditions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+      }
+
+      .conditions strong {
+        color: white;
+      }
+
+      .condition-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        background: var(--sun);
+      }
+
       nav {
         display: flex;
         align-items: center;
@@ -265,6 +288,34 @@
         line-height: 1.7;
       }
 
+      .social-callout {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        gap: 12px;
+        margin-top: 28px;
+        padding: 13px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 8px;
+        color: white;
+        background: rgba(6, 45, 53, 0.28);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .social-callout span {
+        display: inline-grid;
+        place-items: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--sun);
+        color: var(--deep);
+      }
+
       .lineup {
         background: white;
       }
@@ -389,6 +440,13 @@
         <div class="brand">
           LiveBoaStreams.com
           <span>Lake life, live</span>
+          <div class="conditions" aria-label="Lake Norman conditions updated May 12, 2026">
+            <strong>Water 68&deg;F</strong>
+            <i class="condition-dot" aria-hidden="true"></i>
+            <strong>Outdoor 53&deg;F</strong>
+            <i class="condition-dot" aria-hidden="true"></i>
+            <span>May 12 update</span>
+          </div>
         </div>
         <nav aria-label="Primary navigation">
           <a href="#streams">Streams</a>
@@ -452,6 +510,10 @@
             The page keeps the focus on live boat streaming and Lake Norman atmosphere. Clean copy,
             open space, water, boats, and a brighter island-inspired mood.
           </p>
+          <a class="social-callout" href="https://x.com/idolboatcharter" target="_blank" rel="noopener">
+            <span>X</span>
+            @idolboatcharter
+          </a>
         </div>
       </section>
 
