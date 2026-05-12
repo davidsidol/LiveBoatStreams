@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LiveBoaStreams.com | Live Boat Streams</title>
+    <meta
+      name="description"
+      content="LiveBoaStreams.com brings tropical live boat streaming energy from Lake Norman with IdolBoatChargers."
+    />
+    <style>
+      :root {
+        --ink: #12343b;
+        --deep: #062d35;
+        --sea: #087f8c;
+        --aqua: #45c7b6;
+        --sun: #f7c35f;
+        --coral: #e96d5a;
+        --leaf: #1f7a4d;
+        --foam: #f4fff9;
+        --mist: #dff8f1;
+        --line: rgba(6, 45, 53, 0.16);
+        --shadow: 0 18px 48px rgba(6, 45, 53, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--foam);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .hero {
+        min-height: 92vh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        background:
+          linear-gradient(90deg, rgba(6, 45, 53, 0.78), rgba(6, 45, 53, 0.42) 52%, rgba(6, 45, 53, 0.2)),
+          url("assets/lake-norman-wake.jpeg");
+        background-position: center 58%;
+        background-size: cover;
+        color: white;
+      }
+
+      header {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 22px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: grid;
+        gap: 3px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .brand span {
+        color: var(--sun);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      nav a {
+        text-decoration: none;
+      }
+
+      .hero-content {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 70px 0 90px;
+        display: grid;
+        align-content: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--sun);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin: 0;
+        font-size: clamp(42px, 9vw, 104px);
+        line-height: 0.94;
+        letter-spacing: 0;
+      }
+
+      .hero-copy {
+        max-width: 620px;
+        margin: 26px 0 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(17px, 2.2vw, 22px);
+        line-height: 1.55;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 6px;
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .button.primary {
+        border-color: var(--sun);
+        background: var(--sun);
+        color: var(--deep);
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      .section {
+        padding: clamp(58px, 8vw, 104px) 20px;
+      }
+
+      .wrap {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+      }
+
+      .intro {
+        background:
+          linear-gradient(180deg, rgba(244, 255, 249, 0.93), rgba(223, 248, 241, 0.96)),
+          url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=82");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .section-title {
+        max-width: 760px;
+      }
+
+      .section-title p {
+        margin: 0 0 12px;
+        color: var(--sea);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(30px, 5vw, 58px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 34px;
+      }
+
+      .feature {
+        min-height: 190px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.74);
+        box-shadow: var(--shadow);
+      }
+
+      .feature h3 {
+        margin: 0 0 10px;
+        font-size: 21px;
+      }
+
+      .feature p {
+        margin: 0;
+        color: #31575d;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .photo-band {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        min-height: 560px;
+        background: var(--deep);
+        color: white;
+      }
+
+      .photo-panel {
+        background:
+          linear-gradient(180deg, rgba(6, 45, 53, 0.12), rgba(6, 45, 53, 0.34)),
+          url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=82");
+        background-position: center;
+        background-size: cover;
+        min-height: 420px;
+      }
+
+      .copy-panel {
+        display: grid;
+        align-content: center;
+        padding: clamp(38px, 6vw, 76px);
+        background:
+          linear-gradient(135deg, rgba(8, 127, 140, 0.86), rgba(31, 122, 77, 0.86)),
+          var(--sea);
+      }
+
+      .copy-panel h2 {
+        max-width: 520px;
+      }
+
+      .copy-panel p {
+        max-width: 520px;
+        margin: 24px 0 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .lineup {
+        background: white;
+      }
+
+      .stream-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .stream {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+      }
+
+      .stream img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .stream div {
+        padding: 16px;
+      }
+
+      .stream h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .stream p {
+        margin: 0;
+        color: #41666b;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .closing {
+        padding: clamp(54px, 8vw, 86px) 20px;
+        color: white;
+        background:
+          linear-gradient(rgba(6, 45, 53, 0.76), rgba(6, 45, 53, 0.76)),
+          url("https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?auto=format&fit=crop&w=1800&q=82");
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+      }
+
+      .closing p {
+        max-width: 760px;
+        margin: 20px auto 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      footer {
+        padding: 24px 20px;
+        background: var(--deep);
+        color: white;
+      }
+
+      footer .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .footer-note {
+        color: var(--sun);
+      }
+
+      @media (max-width: 860px) {
+        .feature-grid,
+        .stream-list,
+        .photo-band {
+          grid-template-columns: 1fr;
+        }
+
+        .stream-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        nav {
+          display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .hero {
+          min-height: auto;
+        }
+
+        .hero-content {
+          padding: 58px 0 72px;
+        }
+
+        .stream-list {
+          grid-template-columns: 1fr;
+        }
+
+        footer .wrap {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero" id="top">
+      <header>
+        <div class="brand">
+          LiveBoaStreams.com
+          <span>Lake life, live</span>
+        </div>
+        <nav aria-label="Primary navigation">
+          <a href="#streams">Streams</a>
+          <a href="#lake">Lake Norman</a>
+          <a href="#footer">IdolBoatChargers</a>
+        </nav>
+      </header>
+
+      <div class="hero-content">
+        <p class="eyebrow">Tropical boat streaming</p>
+        <h1>Live water views with a Lake Norman pulse.</h1>
+        <p class="hero-copy">
+          LiveBoaStreams brings dockside energy, sunny-water movement, and boat-day atmosphere
+          together in one clean, easy-to-share page.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#streams">View Streams</a>
+          <a class="button" href="#lake">About The Lake</a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section intro" id="lake">
+        <div class="wrap">
+          <div class="section-title">
+            <p>Freshwater tropical</p>
+            <h2>Bright skies, palm-color energy, and boat-ready Lake Norman vibes.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>Marina Moments</h3>
+              <p>
+                A relaxed view of the water, docks, boats, and the easy pace that makes a lake day feel
+                like a getaway.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Sunset Watch</h3>
+              <p>
+                Warm color, quiet water, and the best part of the day framed for people who would rather
+                be outside.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Boat-Day Feel</h3>
+              <p>
+                Clean visuals, breezy copy, and a lighter tropical look built for sharing the stream fast.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="photo-band" aria-label="Lake Norman stream preview">
+        <div class="photo-panel"></div>
+        <div class="copy-panel">
+          <h2>Made for anyone who wants to check the water before heading out.</h2>
+          <p>
+            The page keeps the focus on live boat streaming and Lake Norman atmosphere. Clean copy,
+            open space, water, boats, and a brighter island-inspired mood.
+          </p>
+        </div>
+      </section>
+
+      <section class="section lineup" id="streams">
+        <div class="wrap">
+          <div class="section-title">
+            <p>Stream lineup</p>
+            <h2>Simple sections for the live feed, local highlights, and charger partner message.</h2>
+          </div>
+
+          <div class="stream-list">
+            <article class="stream">
+              <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+                alt="Clear tropical water and sunny coastline"
+              />
+              <div>
+                <h3>Live Water</h3>
+                <p>A calm lead-in for the main live video once the Lake Norman stream is active.</p>
+              </div>
+            </article>
+            <article class="stream">
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+                alt="Mountain lake with sunlight over the water"
+              />
+              <div>
+                <h3>Dock View</h3>
+                <p>A quick section for the dock, marina, or camera location people will recognize.</p>
+              </div>
+            </article>
+            <article class="stream">
+              <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+                alt="Bright tropical shoreline"
+              />
+              <div>
+                <h3>Lake Mood</h3>
+                <p>Warm, scenic space for updates, weather notes, or what is happening on the water.</p>
+              </div>
+            </article>
+            <article class="stream">
+              <img
+                src="https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?auto=format&fit=crop&w=900&q=80"
+                alt="Boat floating on calm blue water"
+              />
+              <div>
+                <h3>Power Partner</h3>
+                <p>IdolBoatChargers keeps the boat-day energy powered at the dock and on the water.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="wrap">
+          <p class="eyebrow">Coming soon</p>
+          <h2>Live boat streaming from Lake Norman.</h2>
+          <p>
+            A polished static page for LiveBoaStreams.com, ready to host on Cloudflare Workers while the
+            live stream setup comes online.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="wrap">
+        <div>Live boat streaming coming from Laken Norman</div>
+        <div class="footer-note">With IdolBoatChargers</div>
+      </div>
+    </footer>
+  </body>
+</html>
